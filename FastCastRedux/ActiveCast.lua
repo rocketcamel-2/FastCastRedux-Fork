@@ -482,7 +482,7 @@ function ActiveCastStatic.new(caster: Caster, origin: Vector3, direction: Vector
 		-- The provider is nil. Use a cosmetic object clone.
 		if cast.RayInfo.CosmeticBulletObject ~= nil then
 			cast.RayInfo.CosmeticBulletObject = cast.RayInfo.CosmeticBulletObject:Clone()
-			cast.RayInfo.CosmeticBulletObject.CFrame = CFrame.new(origin, origin + direction)
+			cast.RayInfo.CosmeticBulletObject:PivotTo(CFrame.new(origin, origin + direction))
 			cast.RayInfo.CosmeticBulletObject.Parent = castDataPacket.CosmeticBulletContainer
 		end
 	else
